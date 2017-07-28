@@ -1,1 +1,0 @@
-// if going Sequelize route, this orm.js is not needed.
