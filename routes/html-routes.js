@@ -5,3 +5,10 @@
 // Dependencies
 // =============================================================
 var path = require("path");
+
+// Routes
+// =============================================================
+module.exports = function(app){
+	// Note: Serving static files in Express
+	app.use(express.static('public'));
+}
