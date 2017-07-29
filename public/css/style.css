@@ -15,6 +15,10 @@ p {
   line-height: 2rem;
 }
 
+#move-button {
+  padding-top: 100px;
+}
+
 .button-collapse {
   color: #26a69a;
 }
