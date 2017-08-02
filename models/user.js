@@ -11,6 +11,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT,
       allowNull: false,
       len: [1]
+    },
+    rating: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      len: [1]
     }
   })
 }

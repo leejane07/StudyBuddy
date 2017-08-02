@@ -22,10 +22,6 @@ p {
   line-height: 2rem;
 }
 
-#borderDivider {
-  border-right: 1px solid;
-  position: absolute;
-}
 
 #move-button {
   padding-top: 150px;

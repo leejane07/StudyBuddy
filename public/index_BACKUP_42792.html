@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Codemate</title>
+  <link rel="icon" type="image/icon" href="faviconsb.ico" sizes="16x16">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<<<<<<< HEAD
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Cuprum:400,700" rel="stylesheet">
+
+=======
+<<<<<<< HEAD
+  <script type="text/javascript" src="/main.js"></script>
+=======
+
+
+<!-- firebase oauth setup -->
+       <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+        <script>
+                      // Initialize Firebase
+               var config = {
+                 apiKey: "AIzaSyAsky70TgdY1TzyQu6T_Ptu3cXA9dmPZ78",
+                 authDomain: "authorizationtest-c3d2c.firebaseapp.com",
+                 databaseURL: "https://authorizationtest-c3d2c.firebaseio.com",
+                 projectId: "authorizationtest-c3d2c",
+                 storageBucket: "authorizationtest-c3d2c.appspot.com",
+                 messagingSenderId: "310059376180"
+               };
+               firebase.initializeApp(config);
+        </script> 
+
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: 'profile.html',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.GithubAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        ],
+        // Terms of service url.
+        tosUrl: '<your-tos-url>'
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+
+<!--========================================================= -->
+>>>>>>> 9f2d5fc8aa650517ce2335c7e3ea7c2587098c97
+>>>>>>> d7c8172ef7ec3b005bca7e7efdd709fd35f99519
+</head>
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">&ltcodemate&gt</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Login</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Login</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <!-- comment -->
+    <div id="firebaseui-auth-container"></div>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2"></h1>
+        <div class="row center">
+          <h5 class="header col s12 lighten-4">Stop programming alone.</h5> 
+            <p>Find your Codemate and improve the quality of your code through collaboration.</p>
+        </div>
+        <div class="row center" id="move-button">
+          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Sign Up</a>
+          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Login</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="keyboard.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+    <div class="row center">
+          <h5 class="header col s12 lighten-4">Connect with someone that "speaks" your languages.</h5>
+        </div>
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s6 m4">
+          <div class="icon-block">
+            <h2 class="center teal-text"><i class="material-icons">language</i></h2>
+            <h5 class="center">HTML/CSS</h5>
+          </div>
+        </div>
+
+        <div class="col s6 m4">
+          <div class="icon-block">
+            <h2 class="center teal-text"><i class="material-icons">language</i></h2>
+            <h5 class="center">Javascript</h5>
+          </div>
+        </div>
+
+        <div class="col s6 m4">
+          <div class="icon-block">
+            <h2 class="center teal-text"><i class="material-icons">language</i></h2>
+            <h5 class="center">Ruby</h5>
+          </div>
+        </div>
+
+        <div class="col s6 m4">
+          <div class="icon-block">
+            <h2 class="center teal-text"><i class="material-icons">language</i></h2>
+            <h5 class="center">PHP</h5>            
+          </div>
+        </div>
+
+         <div class="col s6 m4">
+          <div class="icon-block">
+            <h2 class="center teal-text"><i class="material-icons">language</i></h2>
+            <h5 class="center">Python</h5>            
+          </div>
+        </div>
+
+         <div class="col s6 m4">
+          <div class="icon-block">
+            <h2 class="center teal-text"><i class="material-icons">language</i></h2>
+            <h5 class="center">React</h5>            
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+<!--         <div class="row center">
+          <h5 class="header col s12 blue-grey-text text-darken-4">Improve the quality of your code through collaboration.</h5>
+        </div> -->
+      </div>
+    </div>
+    <div class="parallax"><img src="collaboration.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>We connect you to developers that you want to know.</h4>
+          <p class="center-align light">Join our &ltcodemate&gt and connect with a pair programming partner to improve the quality and effectiveness of your code. Find a &ltcodemate&gt that shares your experience level in your desired language and let's get started!</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <!-- <div class="row center">
+          <h5 class="header col s12 lighten-4">Work with mates that share your experience level.</h5>
+        </div> -->
+      </div>
+    </div>
+    <div class="parallax"><img src="pairprograming.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About us</h5>
+          <p class="grey-text text-lighten-4">We're a group of coding bootcamp graduates that know all too well the perils of coding alone. We are here to create a community of fellow developers that are ready and willing to work with you to acheive success in solving problems and developing solutions in real time.</p>
+
+
+        </div>
+        <!-- <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div> -->
+        <div class="col l6 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">info@codemate.com</a></li>
+            <li><a class="white-text" href="#!">&ltcodemate&gt GitHub</a></li>
+            <li><a class="white-text" href="#!">&ltcodemate&gt stack overflow</a></li>
+            <!-- <li><a class="white-text" href="#!">Link 4</a></li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+       <p class="brown-text text-lighten-3"> &copy; 2017 Codemate LLC. Creatively crafted at Rutgers Coding Bootcamp</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
