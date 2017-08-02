@@ -8,46 +8,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
-
-  <!--oauth firebase setup --> 
-
-   <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
-        <script>
-                      // Initialize Firebase
-               var config = {
-                 apiKey: "AIzaSyAsky70TgdY1TzyQu6T_Ptu3cXA9dmPZ78",
-                 authDomain: "authorizationtest-c3d2c.firebaseapp.com",
-                 databaseURL: "https://authorizationtest-c3d2c.firebaseio.com",
-                 projectId: "authorizationtest-c3d2c",
-                 storageBucket: "authorizationtest-c3d2c.appspot.com",
-                 messagingSenderId: "310059376180"
-               };
-               firebase.initializeApp(config);
-        </script>
-    <script>
-
-firebase.auth().onAuthStateChanged(firebaseUser => {
-    if (firebaseUser) {
-      console.log(firebaseUser);
-      let userId = firebaseUser.displayName;
-      let userPhotoUrl = firebaseUser.photoURL;
-      let userEmail = firebaseUser.email;
-      
-      //userId.attr(firebaseUser.displayName);
-      console.log(firebaseUser.displayName);
-       console.log(firebaseUser.photoURL);
-       console.log(firebaseUser.email);
-
-
-    } else {
-      console.log('not logged in');
-    };
-});
-</script>
-<!--====================================================== -->
-
-
 </head>
 <body>
 <div id="wrapper">
@@ -55,7 +15,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         <div id="header"></div>
          <nav class="white" role="navigation">
             <div class="nav-wrapper container">
-              <a id="logo-container" href="#" class="brand-logo">Code Buddy</a>
+              <a id="logo-container" href="#" class="brand-logo">CodeMate</a>
               <ul class="right hide-on-med-and-down">
                 <li><a href="#">Profile</a></li>
               </ul>
@@ -80,15 +40,14 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
   </div>
     </main> 
 <!-- footer -->
-    <footer class="page-footer white">
-    <!-- <footer class="page-footer white"> -->
         <div class="container">
           <div class="row">
-            <div class="col l6 s12">
-              <a href="#!"><h5 class="black-text">About Us</h5></a>
-              <p class="black-text">We are a group of Noob programmers trying to help other developers connect and collaborate.</p>
-          </div>
+            <div class="col l12">
+              <iframe src="chat/index.html" seamless width="100%" height="500em"></iframe>
+            </div>
         </div>
+    <footer class="page-footer white">
+    <!-- <footer class="page-footer white"> -->
         <div class="footer-copyright">
           <div class="container">
             <span class="black-text">Made by The Flying Rebels</span>
