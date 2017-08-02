@@ -1,6 +1,6 @@
 $(document).ready(function(){
 // 0. Allow the user to authenticate w/ GitHub
-
+if 
   // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
    
   // 0a. Retrieve user.github_id (or whatever)
