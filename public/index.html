@@ -10,7 +10,50 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<<<<<<< HEAD
   <script type="text/javascript" src="/main.js"></script>
+=======
+
+
+<!-- firebase oauth setup -->
+       <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+        <script>
+                      // Initialize Firebase
+               var config = {
+                 apiKey: "AIzaSyAsky70TgdY1TzyQu6T_Ptu3cXA9dmPZ78",
+                 authDomain: "authorizationtest-c3d2c.firebaseapp.com",
+                 databaseURL: "https://authorizationtest-c3d2c.firebaseio.com",
+                 projectId: "authorizationtest-c3d2c",
+                 storageBucket: "authorizationtest-c3d2c.appspot.com",
+                 messagingSenderId: "310059376180"
+               };
+               firebase.initializeApp(config);
+        </script> 
+
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: 'profile.html',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.GithubAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        ],
+        // Terms of service url.
+        tosUrl: '<your-tos-url>'
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+
+<!--========================================================= -->
+>>>>>>> 9f2d5fc8aa650517ce2335c7e3ea7c2587098c97
 </head>
 <body>
   <nav class="brown lighten-4" role="navigation">
@@ -26,6 +69,8 @@
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
+  <!-- comment -->
+    <div id="firebaseui-auth-container"></div>
 
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
