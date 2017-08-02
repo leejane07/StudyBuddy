@@ -5,18 +5,30 @@
  *
  * Made By MaterializeCSS.com
  */
+html {
+  font-family: 'Cuprum', sans-serif;
+}
 
 nav ul a,
 nav .brand-logo {
   color: #444;
 }
 
+.brand-logo {
+  font-weight: 700;
+}
+
 p {
   line-height: 2rem;
 }
 
+#borderDivider {
+  border-right: 1px solid;
+  position: absolute;
+}
+
 #move-button {
-  padding-top: 100px;
+  padding-top: 150px;
 }
 
 .button-collapse {
@@ -24,7 +36,7 @@ p {
 }
 
 .parallax-container {
-  min-height: 380px;
+  min-height: 500px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
