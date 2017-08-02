@@ -9,10 +9,10 @@ var db = require("../models");
 
 module.exports = function(app){
 	//GET route getting all languages
-	app.get("/api/profile", function(req, res) {
+	app.get("/api/questions", function(req, res) {
     var query = {};
-    if (req.query.language_id) {
-      query.AuthorId = req.query.author_id;
+    if (req.query.languageSelect) {
+      query.languageSelect = req.query.languageSelect;
     }
     db.Post.findAll({
       where: query

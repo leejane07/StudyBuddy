@@ -8,6 +8,10 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script
+  src="http://code.jquery.com/jquery-3.2.1.js"></script>
+ 
+
 </head>
 <body>
 <div id="wrapper">
@@ -31,30 +35,36 @@
     <div class="background-color blue darken-4">
     <div class="container">
         <div class="row center">
-        <div class="col l12 s12">
-          <span>I code in</span>
-          <label>Language</label>
-            <select class="browser-default">
-                <option value="1">CSS/HTML</option>
-                <option value="2">Javascript</option>
-                <option value="3">Ruby</option>
-                <option value="1">PHP</option>
-                <option value="2">Python</option>
-                <option value="3">Swift</option>
-            </select>
-          <span>and rate myself a </span>
-           <label>#</label>
-            <select class="browser-default">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="1">4</option>
-                <option value="2">5</option>
-            </select>
-        </div>
-        <div class="row center">
-            <a href="/profile"><button input="submit"> submit </button> </a> 
-        </div>
+        <form id='form'>
+          <div class="col l12 s12">
+            <span>I code in</span>
+            <label>Language</label>
+              <select class="browser-default" id="language">
+                  <option value="1">CSS/HTML</option>
+                  <option value="2">Javascript</option>
+                  <option value="3">Ruby</option>
+                  <option value="1">PHP</option>
+                  <option value="2">Python</option>
+                  <option value="3">Swift</option>
+              </select>
+          </div>
+        
+          
+          <div class="col l12 s12">
+            <span>and rate myself a </span>
+             <label>#</label>
+              <select class="browser-default" id="rating">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="1">4</option>
+                  <option value="2">5</option>
+              </select>
+          </div>
+          <div class="row center">
+              <a href="/profile"><button input="submit" id="submit"> submit </button> </a> 
+          </div>
+        </form>
     <!-- end container div -->
     </div>
   </div>
@@ -78,6 +88,5 @@
     </footer>
 <!-- end wrapper div -->
 </div>
-    
 </body>
 </html>
