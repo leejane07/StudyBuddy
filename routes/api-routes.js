@@ -9,24 +9,12 @@ var db = require("../models");
 
 module.exports = function(app){
   //GET route getting all users
-  app.get("/api/[user]", function(req, res) {
-    var query = {};
-    if (req.query.languageSelect) {
-      query.languageSelect = req.query.languageSelect;
-    }
-    db.User.findAll({
-      where: query
-    }).then(function(dbPost) {
-      res.json(dbPost);
-    });
-  });
+  app.get("/users", function(req, res) {
+    const {uid} = req.body;
 
-  app.post("/users", function(req, res) {
-     const {uid} = req.body;
-
-     db.User.find({
+     db.User.findAll({
       where: {
-
+        uid: uid
       }
      }).then(function (user) {
        if (user) {
@@ -39,13 +27,16 @@ module.exports = function(app){
         }).then(res.json)
        }
      })
+    var query = {};
+  });
+
+  app.post("/users", function(req, res) {
+     
    });
 
   app.post("/questions", function (req, res){
     // update
-
-    db.User.create({
-      username: req.body.username,
+    db.User.update({
       language: req.body.language,
       rating: req.body.rating
     })

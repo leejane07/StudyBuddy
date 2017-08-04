@@ -6,7 +6,6 @@ $(document).ready(function (){
 var init = () => alert('Is Firing');
 
 /*
-
 const logger = {
   on: true,
   log: function (message, params, ...args) {
@@ -39,7 +38,7 @@ $(form).on("submit", function handleFormSubmit(event){
 
  // FirebaseUI config.
   var uiConfig = {
-    signInSuccessUrl: 'profile.html',
+    signInSuccessUrl: 'questions.html',
     signInOptions: [
       // Leave the lines as is for the providers you want to offer your users.
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -72,7 +71,10 @@ $(form).on("submit", function handleFormSubmit(event){
     } else {
       console.log('not logged in');
     };
+    firebase.auth().signOut();
   });
+
+  
 <!-- End Firebase -->
 
 
@@ -84,15 +86,13 @@ $(form).on("submit", function handleFormSubmit(event){
   let userName = $("#userName");
 <!-- End Front-end user info -->
   
-  
-  // 0. Fill out implementation details below
   // 0b. Check if your DB contains a user WHERE github_id === user.github_id
   $.ajax({
-    // Choose a better endpoint_name later damn it--<endpoint> runs SQL query to check if there's a user w/ github_id already in the DB
-    url: '/api/<endpoint_name>',
+    // GET request to users endpoint
+    url: '/api/users',
     method: 'GET',
     // Check this property name
-    data: { github_id }
+    data: { uid }
   }).done(function (queryResult) {
       // queryResult is either null, OR some user
       if (queryResult == undefined) {

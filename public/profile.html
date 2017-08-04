@@ -13,27 +13,42 @@
 <div id="wrapper">
     <header>
         <div id="header"></div>
-        <img src="images/keyboard.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
          <nav class="white" role="navigation">
-            <div class="nav-wrapper container">
-              <a id="logo-container" href="#" class="brand-logo">CodeMate</a>
-              <ul class="right hide-on-med-and-down">
-                <li><a href="#">Log Out</a></li>
-              </ul>
-              <ul id="nav-mobile" class="side-nav">
-                <li><a href="#">Log Out</a></li>
-              </ul>
-              <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-            </div>
+          <!-- Dropdown Trigger -->
+          <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
+
+          <!-- Dropdown Structure -->
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#">Log Out</a></li>
+            <li><a href="#!">two</a></li>
+            <li class="divider"></li>
+          </ul>
+
+          <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">CodeMate</a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="#">Log Out</a></li>
+            </ul>
+            <ul id="nav-mobile" class="side-nav">
+              <li><a href="#">Log Out</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            <div class = "right-align">
+            <img src="images/keyboard.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class --></div>
+            
+          </div>
         </nav>
     </header>
 
 <!-- beginning of body -->
     <main>
+    <br>
+    <br>
+    <br>
       <div class="container">
         <div class="row">
           <div class="col l12">
-            <iframe src="chat/index.html" seamless width="100%" height="500em"></iframe>
+            <iframe src="chat/index.html" seamless width="100%" height="600em"></iframe>
           </div>
       </div>
     </main> 
