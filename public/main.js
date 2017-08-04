@@ -25,6 +25,7 @@ $(form).on("submit", function handleFormSubmit(event){
   event.preventDefault();
   init();
 
+<!-- Start Firebase -->
 // Initialize Firebase
  var config = {
    apiKey: "AIzaSyAsky70TgdY1TzyQu6T_Ptu3cXA9dmPZ78",
@@ -56,32 +57,35 @@ $(form).on("submit", function handleFormSubmit(event){
 
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
+      $.post('/users', {uid: firebaseUser.uid})
+
       console.log(firebaseUser);
-      let userId = firebaseUser.displayName;
-      let userPhotoUrl = firebaseUser.photoURL;
-      let userEmail = firebaseUser.email;
+      // User model info
+      const {uid, photoUrl, email} = firebaseUser;
+
+      // does this uid exist in db
       
       //userId.attr(firebaseUser.displayName);
       console.log(firebaseUser.displayName);
-       console.log(firebaseUser.photoURL);
-       console.log(firebaseUser.email);
-
-
+      console.log(firebaseUser.photoURL);
+      console.log(firebaseUser.email);
     } else {
       console.log('not logged in');
     };
   });
+<!-- End Firebase -->
 
+
+<!-- Front-end user info -->
   let form = $("#form");
   let language = $("#language option:selected"); 
   let rating = $("#rating option:selected");
-  // 0a. Retrieve user.github_id (or whatever)
+  // 0a. Retrieve user.id 
   let userName = $("#userName");
-
+<!-- End Front-end user info -->
   
   
   // 0. Fill out implementation details below
-  // YOU'LL HAVE TO MOVE THIS: 
   // 0b. Check if your DB contains a user WHERE github_id === user.github_id
   $.ajax({
     // Choose a better endpoint_name later damn it--<endpoint> runs SQL query to check if there's a user w/ github_id already in the DB

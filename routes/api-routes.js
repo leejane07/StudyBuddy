@@ -8,8 +8,8 @@ var db = require("../models");
 // =============================================================
 
 module.exports = function(app){
-	//GET route getting all users
-	app.get("/api/[user]", function(req, res) {
+  //GET route getting all users
+  app.get("/api/[user]", function(req, res) {
     var query = {};
     if (req.query.languageSelect) {
       query.languageSelect = req.query.languageSelect;
@@ -21,7 +21,26 @@ module.exports = function(app){
     });
   });
 
+  app.post("/users", function(req, res) {
+     const {uid} = req.body;
+
+     db.User.find({
+      where: // user's uid is equal to ^ that uid
+     }).then(function (user) {
+       if (user) {
+         res.json(user);
+       } else {
+          // ensure you have a username
+        User.create({
+          username: req.body.username,
+          uid: uid
+        }).then(res.json)
+       }
+     })
+
   app.post("/questions", function (req, res) {
+    // update
+
     db.User.create({
       username: req.body.username,
       language: req.body.language,

@@ -7,14 +7,22 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
+    email: {
+      type; DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        // email validation
+        // no dupe users
+      }
+    },
     language: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
       len: [1]
     },
     rating: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       len: [1]
     }
   });
