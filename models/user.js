@@ -10,10 +10,10 @@ module.exports = function(sequelize, DataTypes) {
     email: {
       type; DataTypes.STRING,
       allowNull: false,
-      validate: {
-        // email validation
-        // no dupe users
-      }
+      // validate: {
+      //   // email validation
+      //   // no dupe users
+      // }
     },
     language: {
       type: DataTypes.TEXT,

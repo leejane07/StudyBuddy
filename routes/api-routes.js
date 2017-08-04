@@ -25,7 +25,9 @@ module.exports = function(app){
      const {uid} = req.body;
 
      db.User.find({
-      where: // user's uid is equal to ^ that uid
+      where: {
+        
+      }
      }).then(function (user) {
        if (user) {
          res.json(user);
