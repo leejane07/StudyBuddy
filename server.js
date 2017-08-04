@@ -9,6 +9,7 @@ var bodyParser = require("body-parser");
 var sequelize = require("sequelize");
 var firebase = require("firebase");
 
+
 // Sets up the Express App
 // =============================================================
 var app = express();

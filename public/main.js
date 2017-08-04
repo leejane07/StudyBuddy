@@ -1,4 +1,7 @@
 $(document).ready(function (){
+document.write(
+  unescape("%3Cscript src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js' type='text/javascript'%3E%3C/script%3E")
+);
 // 0. Allow the user to authenticate w/ GitHub...
   // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
 
