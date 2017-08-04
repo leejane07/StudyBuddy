@@ -22,6 +22,11 @@ module.exports = function(app){
     res.sendFile(path.join(__dirname, "../public/questions.html"));
   });
 
+   // profile route loads questions.html
+  app.get("/profile", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/profile.html"));
+  });
+
   // chat route loads chat.html
   app.get("/chat/index.html", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/chat/index.html"));
