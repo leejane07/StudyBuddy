@@ -22,9 +22,30 @@ p {
   line-height: 2rem;
 }
 
+.modal {
+  max-height: 90%;
+  max-width: 50%;
+}
+
+.modal-form-row {
+  margin-bottom: 0px;
+}
+
+#modalbtn {
+  padding-top: 150px;
+}
 
 #move-button {
   padding-top: 150px;
+}
+
+#checkBoxRow {
+  padding-left: 75px;
+}
+
+#modalText{
+  color: black;
+  padding-top: 50px;
 }
 
 .button-collapse {

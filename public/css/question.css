@@ -1,0 +1,103 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+  align-content: left;
+  margin-bottom: 0px;
+  color: #444;
+  font-family: 'Cuprum', sans-serif;
+}
+
+.brand-logo {
+  font-weight: 700;
+}
+
+div.background-color.blue.darken-4{
+  text-align:left;
+}
+
+div#questionaireCont.container{
+  height: 500px;
+}
+
+div.row.center {
+  position:relative;
+  padding:0;
+  margin:0;
+}
+
+#questionaireCont{
+  margin:0;
+  padding-left:400px;
+  
+}
+
+#form{
+  display: block;
+  padding-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#mainContent {
+  height: 300px;
+  line-height: 2em;
+  font-family: 'Zilla Slab', serif;
+}
+
+.content{
+  margin: auto;
+}
+
+button#submit{
+  border: 0px;
+  background-color: transparent;
+  font-size: large;
+  color:white;
+  padding-top: 20px;
+}
+
+#questionaireRow{
+  width:100%;
+  text-align:center;
+}
+
+div.col.m6.s12.colQues{
+  padding:0;
+  width: 50%;
+}
+
+div.input-field.col.m6.s12.questionField{
+  padding:0;
+  width:50%;  
+}
+
+.select-wrapper input.select-dropdown{
+  font-size:1.5rem;
+}
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+footer{
+  font-family: 'Cuprum', sans-serif;
+}
