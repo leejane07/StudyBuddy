@@ -26,7 +26,7 @@ module.exports = function(app){
 
      db.User.find({
       where: {
-        
+
       }
      }).then(function (user) {
        if (user) {
@@ -39,8 +39,9 @@ module.exports = function(app){
         }).then(res.json)
        }
      })
+   });
 
-  app.post("/questions", function (req, res) {
+  app.post("/questions", function (req, res){
     // update
 
     db.User.create({
@@ -56,4 +57,5 @@ module.exports = function(app){
     // 2. Save via .create
   })
 }
+
 
