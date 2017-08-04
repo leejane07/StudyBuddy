@@ -2,7 +2,7 @@
 // =============================================================
 
 // Requiring our models
-var db = require("../models");
+var db = require("../models"); 
 
 // Routes
 // =============================================================
@@ -11,7 +11,7 @@ module.exports = function(app) {
     //GET route getting all users
     app.post("/users", function(req, res, err) {
         console.log("hit users post route")
-        console.log(req.body);
+        console.log("this is" + req.body);
 
         db.User.findAll({
             where: {
@@ -20,7 +20,7 @@ module.exports = function(app) {
         }).then(
         // Create the user
             db.User.create({
-              username: req.body.username,
+              displayName: req.body.username,
               uid: req.body.uid,
               email: req.body.email
             }).catch(err => {
@@ -30,24 +30,24 @@ module.exports = function(app) {
             );
     });
 
-    // function(user) {
-    //         // Check if user is in the DB
-    //         // if (user) {
-    //           let personCheck = user.toString()
-    //             // If user exists console.log the user object
-    //             if (personCheck != "[]") {
-    //               console.log("user exists in db")
-    //               console.log(user)
-    //             } else {
-    //               console.log("user does not exists in db")
-    //               // Create the user
-    //               db.User.create({
-    //                 username: req.body.username,
-    //                 id: req.body.uid
-    //               }).then(res.json)
-    //             }
-    //         // }
-    //     }
+    function checkUser(user) {
+            // Check if user is in the DB
+            // if (user) {
+              let personCheck = user.toString()
+                // If user exists console.log the user object
+                if (personCheck != "[]") {
+                  console.log("user exists in db")
+                  console.log(user)
+                } else {
+                  console.log("user does not exists in db")
+                  // Create the user
+                  db.User.create({
+                    username: req.body.username,
+                    id: req.body.uid
+                  }).then(res.json)
+                }
+             }
+        
 
     // app.post('/users', function (req, res) {
     //   connection.query('INSERT INTO users SET ?', req.body, 
