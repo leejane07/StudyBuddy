@@ -1,30 +1,30 @@
 $(document).ready(function (){
+  console.log("Loaded main js");
 // 0. Allow the user to authenticate w/ GitHub...
   // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
 
-//DELCARING INIT, PASSING BLANK PARAM, STATEMENT
-var init = () => alert('Is Firing');
 
-/*
-const logger = {
-  on: true,
-  log: function (message, params, ...args) {
-    // do shit with stuff 
-    // print to log file
-    if (this.on) {
-      console.log('is firing')
-    } else {
-      //
-    }
-  }
-}*/
+// const logger = {
+//   on: true,
+//   log: function (message, params, ...args) {
+//     // do shit with stuff 
+//     // print to log file
+//     if (this.on) {
+//       console.log('is firing')
+//     } else {
+//       //
+//     }
+//   }
+// }
+//Front-end user info -->
+  var form = $("#form");
+  var language = $("#language option:selected"); 
+  // 0a. Retrieve user.id 
+  var userName = $("#userName");
 
-//write event handler for submit button that pushes form results into the db using post request in controllers.
-$(form).on("submit", function handleFormSubmit(event){
-  event.preventDefault();
-  init();
+//End Front-end user info
 
-<!-- Start Firebase -->
+// <!-- Start Firebase
 // Initialize Firebase
  var config = {
    apiKey: "AIzaSyAsky70TgdY1TzyQu6T_Ptu3cXA9dmPZ78",
@@ -35,6 +35,35 @@ $(form).on("submit", function handleFormSubmit(event){
    messagingSenderId: "310059376180"
  };
  firebase.initializeApp(config);
+
+
+firebase.auth().onAuthStateChanged(firebaseUser => {
+    console.log("onAuthStateChanged function has been triggered")
+    if (firebaseUser) {
+      console.log(firebaseUser.uid);
+      var user ={ 
+        uid: firebaseUser.uid,
+        username: firebaseUser.displayName,
+        email: firebaseUser.email
+      };
+
+      $.post('/users', user, function(response){
+        console.log(response);
+      })
+
+      console.log(firebaseUser);
+
+      // does this uid exist in db
+      
+      //userId.attr(firebaseUser.displayName);
+      console.log(firebaseUser.displayName);
+      console.log(firebaseUser.photoURL);
+      console.log(firebaseUser.email);
+    } else {
+      console.log('not logged in');
+    };
+    
+});
 
  // FirebaseUI config.
   var uiConfig = {
@@ -54,45 +83,40 @@ $(form).on("submit", function handleFormSubmit(event){
   // The start method will wait until the DOM is loaded.
   ui.start('#firebaseui-auth-container', uiConfig);
 
-  firebase.auth().onAuthStateChanged(firebaseUser => {
-    if (firebaseUser) {
-      $.post('/users', {uid: firebaseUser.uid})
+// // Real time check against user authentication
+//   firebase.auth().onAuthStateChanged(function(user, error) {
+//     if (error) {
+//       console.log(error);
+//     }
+//     if (user) {
+//       console.log("Logged in")
+//       console.log(user);
+//     } else {
+//       console.log("Not logged in");
+//       window.location = "/"
+//     }
+//   })
 
-      console.log(firebaseUser);
-      // User model info
-      const {uid, photoUrl, email} = firebaseUser;
-
-      // does this uid exist in db
-      
-      //userId.attr(firebaseUser.displayName);
-      console.log(firebaseUser.displayName);
-      console.log(firebaseUser.photoURL);
-      console.log(firebaseUser.email);
-    } else {
-      console.log('not logged in');
-    };
-    firebase.auth().signOut();
-  });
+//   $("#log-out").on("click", function() {
+//     firebase.auth().signOut();
+//   })
 
   
-<!-- End Firebase -->
+
+  
+// <!-- End Firebase -->
 
 
-<!-- Front-end user info -->
-  let form = $("#form");
-  let language = $("#language option:selected"); 
-  let rating = $("#rating option:selected");
-  // 0a. Retrieve user.id 
-  let userName = $("#userName");
-<!-- End Front-end user info -->
+
   
   // 0b. Check if your DB contains a user WHERE github_id === user.github_id
-  $.ajax({
+  function getUser(user){
+$.ajax({
     // GET request to users endpoint
     url: '/api/users',
     method: 'GET',
     // Check this property name
-    data: { uid }
+    data: user.uid
   }).done(function (queryResult) {
       // queryResult is either null, OR some user
       if (queryResult == undefined) {
@@ -116,22 +140,8 @@ $(form).on("submit", function handleFormSubmit(event){
 
       }
     })
-
-  
-
-  
-
-  
-});
-
-
-  
-
-
-  
-  
-});
-  
+  }  
+ }); 
 
 // CLIENT-SIDE
   // User/Client logs in via GitHub
