@@ -1,10 +1,11 @@
 {
   "development": {
-    "username": "root",
-    "password": "root",
-    "database": "studyBuddy_db",
-    "host": "localhost",
-    "dialect": "mysql"
+    "username": "nyendmi4wiw9w2oo",
+    "password": "d7cgj9zufurxojqv",
+    "database": "tmqv3amup6jkkprj",
+    "host": "lgg2gx1ha7yp2w0k.cbetxkdyhwsb.us-east-1.rds.amazonaws.com  ",
+    "dialect": "mysql",
+    "port": 3306
   },
   "test": {
     "username": "root",
@@ -18,7 +19,7 @@
     "password": "root",
     "database": "database_production",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
     "use_env_variable": "DATABASE_URL"
   }
 }

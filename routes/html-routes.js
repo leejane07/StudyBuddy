@@ -5,7 +5,8 @@
 // Dependencies
 // =============================================================
 var path = require("path");
-
+const routes = require("express").Router();
+const models = require("../models");
 // Set up Get Routes/End points that load pages
 // =============================================================
 module.exports = function(app){
@@ -16,8 +17,14 @@ module.exports = function(app){
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  // questions route loads cms.html
+  // questions route loads questions.html
   app.get("/questions", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/cms.html"));
+    res.sendFile(path.join(__dirname, "../public/questions.html"));
   });
+
+  // chat route loads chat.html
+  app.get("/chat/index.html", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/chat/index.html"));
+  });
+
 }
