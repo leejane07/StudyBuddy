@@ -1,30 +1,12 @@
 $(document).ready(function (){
+  // var sequelize = require("../connection.js");
   console.log("Loaded main js");
-// 0. Allow the user to authenticate w/ GitHub...
-  // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
 
-
-// const logger = {
-//   on: true,
-//   log: function (message, params, ...args) {
-//     // do shit with stuff 
-//     // print to log file
-//     if (this.on) {
-//       console.log('is firing')
-//     } else {
-//       //
-//     }
-//   }
-// }
-//Front-end user info -->
+//Front-end user info
   var form = $("#form");
   var language = $("#language option:selected"); 
-  // 0a. Retrieve user.id 
   var userName = $("#userName");
 
-//End Front-end user info
-
-// <!-- Start Firebase
 // Initialize Firebase
  var config = {
    apiKey: "AIzaSyAsky70TgdY1TzyQu6T_Ptu3cXA9dmPZ78",
@@ -40,7 +22,7 @@ $(document).ready(function (){
 firebase.auth().onAuthStateChanged(firebaseUser => {
     console.log("onAuthStateChanged function has been triggered")
     if (firebaseUser) {
-      console.log(firebaseUser.uid);
+      
       var user ={ 
         uid: firebaseUser.uid,
         username: firebaseUser.displayName,
@@ -56,6 +38,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
       // does this uid exist in db
       
       //userId.attr(firebaseUser.displayName);
+      console.log(firebaseUser.uid);
       console.log(firebaseUser.displayName);
       console.log(firebaseUser.photoURL);
       console.log(firebaseUser.email);
@@ -108,9 +91,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
 
 
-  
-  // 0b. Check if your DB contains a user WHERE github_id === user.github_id
-  function getUser(user){
+ 
 $.ajax({
     // GET request to users endpoint
     url: '/api/users',
@@ -126,13 +107,13 @@ $.ajax({
           language: language.text(),
           rating: rating.text()
         };
-
-        let jsonUser = JSON.stringify(newUser);
-        console.log(jsonUser)
-        console.log(JSON.stringify(newUser));
+        console.log(newUser);
+        // let jsonUser = JSON.stringify(newUser);
+        // console.log(jsonUser)
+        // console.log(JSON.stringify(newUser));
 
         // POST to the appropriate.<create_user> route
-        $.post('/questions', newUser)
+        $.post('/users', newUser)
          .done(console.log)
          .fail(console.error);
       } else {
@@ -140,20 +121,5 @@ $.ajax({
 
       }
     })
-  }  
+    
  }); 
-
-// CLIENT-SIDE
-  // User/Client logs in via GitHub
-  // -> 'user' object
-// 
-
- 
-
-// // 1. Retrieving and POST/PUT-ing info to server/db
-//   var language = document.getElementById('language');
-//   var rating = document.getElementById('rating');
-
-//   document.querySelector('#submit').addEventListener('click', function (e) {
-//       e.preventDefault();
-//   });

@@ -1,99 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Questionaire</title>
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script src="http://code.jquery.com/jquery-3.2.1.js"></script>
-  <!-- firebase oauth setup -->
-    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Questionaire</title>
+
+<!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/question.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+<!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,700" rel="stylesheet">
+
+<!-- Compiled and minified JavaScript -->  
+    <script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script> 
 </head>
+
 <body>
-<div id="wrapper">
+  <div id="wrapper">
     <header>
-        <div id="header"></div>
-         <nav class="white" role="navigation">
-            <div class="nav-wrapper container">
-              <a id="logo-container" href="#" class="brand-logo">Code Buddy</a>
-              <ul class="right hide-on-med-and-down">
+      <div id="header"></div>
+        <nav class="white" role="navigation">
+          <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">&ltcodemate&gt</a>
+            <ul class="right hide-on-med-and-down">
                 <li><a href="#">Profile</a></li>
-              </ul>
-              <ul id="nav-mobile" class="side-nav">
+            </ul>
+            <ul id="nav-mobile" class="side-nav">
                 <li><a href="#">Profile</a></li>
-              </ul>
-              <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-            </div>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          </div>
         </nav>
     </header>
-<!-- beginning of body -->
-    <main>     
-    <div class="background-color blue darken-4">
-    <div class="container">
-        <div class="row center">
-        <form  method ="POST" action = "/api/questions" id='form'>
-          <div class="col l12 s12">
-            <span>I code in</span>
-            <label>Language</label>
-              <select class="browser-default" id="language">
-                  <option value="1">CSS/HTML</option>
-                  <option value="2">Javascript</option>
-                  <option value="3">Ruby</option>
-                  <option value="1">PHP</option>
-                  <option value="2">Python</option>
-                  <option value="3">Swift</option>
-              </select>
-          </div>
         
-          <div class="col l12 s12">
-            <span>Username</span>
-                <input id="userName" type="text" name="username">        
-          </div>          
+<!-- beginning of main content -->
+    <main>
+      <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+          <div class="container" id="questionaireCont">
+            <div class="row" id="questionaireRow">
+              <form id='form'>
+                <div class="row">
+                  <div class="col m6 s12 colQues"><h5>I code in</h5></div>
+                  <div class=" input-field col m6 s12 questionField">
+                    <select>
+                      <option value="" disabled selected>Language</option>
+                      <option value="1">CSS/HTML</option>
+                      <option value="2">Javascript</option>
+                      <option value="3">Ruby</option>
+                      <option value="1">PHP</option>
+                      <option value="2">Python</option>
+                      <option value="3">Swift</option>
+                    </select>   
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col m6 s12 colQues"><h5>And I Rate Myself a</h5></div>
+                  <div class="input-field col m6 s12 questionField">
+                    <select>
+                      <option value="" disabled selected>#</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="1">4</option>
+                      <option value="2">5</option>
+                    </select>
+                  </div>
+                </div>
 
-
-          <div class="col l12 s12">
-            <span>and rate myself a </span>
-             <label>#</label>
-              <select class="browser-default" id="rating">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="1">4</option>
-                  <option value="2">5</option>
-              </select>
+                <div class="row center">
+                  <a href="/profile">
+                    <button id="submit" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                    </button>
+                  </a>
+                </div>
+              </form>
+<!-- end container div -->
           </div>
-          <div class="row center">
-              <a href="/profile"><button input="submit" id="submit"> submit </button> </a> 
-          </div>
-        </form>
-    <!-- end container div -->
+        </div>
+      </div>
+        <div class="parallax"><img src="testingspotlight2.jpg" alt="Unsplashed background img 1"></div>
     </div>
-  </div>
-    </main> 
+
+    </main>
+
 <!-- footer -->
     <footer class="page-footer white">
-    <!-- <footer class="page-footer white"> -->
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <a href="#!"><h5 class="black-text">About Us</h5></a>
-              <p class="black-text">We are a group of Noob programmers trying to help other developers connect and collaborate.</p>
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="black-text">About Us</h5>
+            <p class="black-text">We're a group of coding bootcamp graduates that know all too well the perils of coding alone. We are here to create a community of fellow developers that are ready and willing to work with you to acheive success in solving problems and developing solutions in real time.</p>
+          </div>
+        
+          <div class="col l6 s12">
+            <h5 class="black-text">Connect</h5>
+            <ul>
+              <li><a class="black-text" href="#!">info@codemate.com</a></li>
+              <li><a class="black-text" href="#!">&ltcodemate&gt GitHub</a></li>
+              <li><a class="black-text" href="#!">&ltcodemate&gt stack overflow</a></li>
+            </ul>
           </div>
         </div>
+
         <div class="footer-copyright">
           <div class="container">
-            <span class="black-text">Made by The Flying Rebels</span>
+            <span class="black-text">&copy; 2017 Codemate LLC. Creatively crafted at Rutgers Coding Bootcamp</span>
           </div>
         </div>
-    <!-- </footer> -->
     </footer>
 <!-- end wrapper div -->
-</div>
+    </div>
 
-<script type="text/javascript" src="./js/app.js"></script>
+<!--  javascript for dropdown menus -->
+    <script>
+      $(document).ready(function() {
+          $('select').material_select();
+          $('.parallax').parallax();
+      });
+    </script>
 </body>
+
 </html>
