@@ -38,31 +38,27 @@ $(document).ready(function (){
 
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
-    console.log("onAuthStateChanged function has been triggered")
-    if (firebaseUser) {
-      console.log(firebaseUser.uid);
-      var user ={ 
-        uid: firebaseUser.uid,
-        username: firebaseUser.displayName,
-        email: firebaseUser.email
-      };
+  console.log("onAuthStateChanged function has been triggered")
+   if (firebaseUser) {
+     // User object and fields
+     var user ={ 
+       uid: firebaseUser.uid,
+       username: firebaseUser.displayName,
+       email: firebaseUser.email
+     };
 
-      $.post('/users', user, function(response){
-        console.log(response);
-      })
-
-      console.log(firebaseUser);
-
-      // does this uid exist in db
-      
-      //userId.attr(firebaseUser.displayName);
-      console.log(firebaseUser.displayName);
-      console.log(firebaseUser.photoURL);
-      console.log(firebaseUser.email);
-    } else {
-      console.log('not logged in');
-    };
-    
+     // Post user object to db
+     $.post('/users', user, function(response){
+       console.log(response);
+     })
+     
+     console.log(firebaseUser.displayName);
+     console.log(firebaseUser.photoURL);
+     console.log(firebaseUser.email);
+     console.log(firebaseUser);
+   } else {
+     console.log('not logged in');
+   };
 });
 
  // FirebaseUI config.
@@ -101,47 +97,44 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 //     firebase.auth().signOut();
 //   })
 
-  
-
-  
 // <!-- End Firebase -->
 
 
+/*  // 0b. Check if your DB contains a user WHERE github_id === user.github_id
+function getUser(){
+ $.ajax({
+   // GET request to users endpoint
+   url: '/users',
+   method: 'GET',
+   // Check this property name
+   data: user.uid
+ }).done(function (queryResult) {
+ console.log("qhlekhlkjahldkfjhdalkfdjhakdljhadfalkjfhalkfjahflkajhfalkjfhalkf")
+     // queryResult validation
+     if (queryResult == undefined) {
+       // Creates an object which contains form data
+       let newUser = {
+         username: userName.val().trim(),
+         language: language.text(),
+         rating: rating.text()
+       };
 
-  
-  // 0b. Check if your DB contains a user WHERE github_id === user.github_id
-  function getUser(user){
-$.ajax({
-    // GET request to users endpoint
-    url: '/api/users',
-    method: 'GET',
-    // Check this property name
-    data: user.uid
-  }).done(function (queryResult) {
-      // queryResult is either null, OR some user
-      if (queryResult == undefined) {
-        // Create a new user; creates an object which contains form data
-        let newUser = {
-          username: userName.val().trim(),
-          language: language.text(),
-          rating: rating.text()
-        };
+       let jsonUser = JSON.stringify(newUser);
+       console.log(jsonUser)
+       console.log(JSON.stringify(newUser));
 
-        let jsonUser = JSON.stringify(newUser);
-        console.log(jsonUser)
-        console.log(JSON.stringify(newUser));
-
-        // POST to the appropriate.<create_user> route
-        $.post('/questions', newUser)
-         .done(console.log)
-         .fail(console.error);
-      } else {
-        // Move on to language selection page
-
-      }
-    })
-  }  
- }); 
+       // Post user object to db
+       $.post('/users', user, function(response){
+         console.log(response);
+       })
+     } else {
+       // Move on to language selection page
+       
+     }
+   })
+ };  
+getUser();
+ }); */
 
 // CLIENT-SIDE
   // User/Client logs in via GitHub
@@ -156,4 +149,5 @@ $.ajax({
 
 //   document.querySelector('#submit').addEventListener('click', function (e) {
 //       e.preventDefault();
-//   });
+//  
+ });
