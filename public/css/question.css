@@ -5,13 +5,15 @@
  *
  * Made By MaterializeCSS.com
  */
+html {
+  font-family: 'Cuprum', sans-serif;
+}
 
 nav ul a,
 nav .brand-logo {
   align-content: left;
   margin-bottom: 0px;
   color: #444;
-  font-family: 'Cuprum', sans-serif;
 }
 
 .brand-logo {
@@ -34,7 +36,9 @@ div.row.center {
 
 #questionaireCont{
   margin:0;
-  padding-left:400px;
+  padding-left:200px;
+  padding-right: 100px;
+  color: white;
   
 }
 
@@ -61,6 +65,7 @@ button#submit{
   font-size: large;
   color:white;
   padding-top: 20px;
+  padding-left: 550px;
 }
 
 #questionaireRow{

@@ -20,7 +20,6 @@ $(document).ready(function (){
 
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
-<<<<<<< HEAD
     console.log("onAuthStateChanged function has been triggered")
     if (firebaseUser) {
       
@@ -47,29 +46,6 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
       console.log('not logged in');
     };
     
-=======
-  console.log("onAuthStateChanged function has been triggered")
-   if (firebaseUser) {
-     // User object and fields
-     var user ={ 
-       uid: firebaseUser.uid,
-       username: firebaseUser.displayName,
-       email: firebaseUser.email
-     };
-
-     // Post user object to db
-     $.post('/users', user, function(response){
-       console.log(response);
-     })
-     
-     console.log(firebaseUser.displayName);
-     console.log(firebaseUser.photoURL);
-     console.log(firebaseUser.email);
-     console.log(firebaseUser);
-   } else {
-     console.log('not logged in');
-   };
->>>>>>> 712e94cbef4c70c073311e91f6ca981b334fad4a
 });
 
  // FirebaseUI config.
@@ -108,10 +84,12 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 //     firebase.auth().signOut();
 //   })
 
+  
+
+  
 // <!-- End Firebase -->
 
 
-<<<<<<< HEAD
 
  
 $.ajax({
@@ -145,56 +123,3 @@ $.ajax({
     })
     
  }); 
-=======
-/*  // 0b. Check if your DB contains a user WHERE github_id === user.github_id
-function getUser(){
- $.ajax({
-   // GET request to users endpoint
-   url: '/users',
-   method: 'GET',
-   // Check this property name
-   data: user.uid
- }).done(function (queryResult) {
- console.log("qhlekhlkjahldkfjhdalkfdjhakdljhadfalkjfhalkfjahflkajhfalkjfhalkf")
-     // queryResult validation
-     if (queryResult == undefined) {
-       // Creates an object which contains form data
-       let newUser = {
-         username: userName.val().trim(),
-         language: language.text(),
-         rating: rating.text()
-       };
-
-       let jsonUser = JSON.stringify(newUser);
-       console.log(jsonUser)
-       console.log(JSON.stringify(newUser));
-
-       // Post user object to db
-       $.post('/users', user, function(response){
-         console.log(response);
-       })
-     } else {
-       // Move on to language selection page
-       
-     }
-   })
- };  
-getUser();
- }); */
-
-// CLIENT-SIDE
-  // User/Client logs in via GitHub
-  // -> 'user' object
-// 
-
- 
-
-// // 1. Retrieving and POST/PUT-ing info to server/db
-//   var language = document.getElementById('language');
-//   var rating = document.getElementById('rating');
-
-//   document.querySelector('#submit').addEventListener('click', function (e) {
-//       e.preventDefault();
-//  
- });
->>>>>>> 712e94cbef4c70c073311e91f6ca981b334fad4a

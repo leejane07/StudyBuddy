@@ -8,15 +8,23 @@
   <link href='https://fonts.googleapis.com/css?family=Exo+2:400,900italic,900,800italic,800,700italic,700,600italic,600,500italic,500,400italic,300italic,200italic,200,100italic,100,300' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,900italic,900,800italic,800,700italic,700,600italic,600,500italic,500,400italic,300italic,200italic,200,100italic,100,300' rel='stylesheet' type='text/css'>
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Cuprum:400,700" rel="stylesheet">
   <!--<link rel="stylesheet" href="/static/bootstrap/bootstrap.min.css">-->
   <!--<link rel="stylesheet" href="/static/css/sample-index.css">-->
   <link rel="stylesheet" href="static/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="static/css/sample-index.css">
 
-  <title>Welcome to Codemate!</title>
+  <title>Chat &ltcodemate&gt</title>
 </head>
-<body class="sample-background">
-  <div class="container">
+<body> 
+  <div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <h1 class="navbar-brand">&ltcodemate&gt</h1>
+    </div>
+  </div>
+  
+  <div class="sample-background">
     <div class="row">
 
       <!-- top -->
@@ -26,22 +34,22 @@
           <img src="static/img/logo_landing.svg"> -->
         </div>
         <div class="text-sort text-sort--left">
-          <label class="index-title"><strong>Codemate Chat</strong></label>
+          <label class="index-title"><strong>Join &ltcodemate&gt Chat...</strong></label>
         </div>
       </div>
 
       <!-- user info -->
       <div class="index-section index-input">
-        <input type="text" class="index-userid" placeholder="Enter Codemate user ID" id="user_id"> <br /> <br />
-        <input type="text" class="index-nickname" maxlength="12" placeholder="Enter Codemate chat name" id="user_nickname">
-        <button type="button" class="index-button" id="btn_start">DONE</button>
+        <input type="text" class="index-userid" placeholder="Enter <codemate> User ID" id="user_id"> <br /> <br />
+        <input type="text" class="index-nickname" maxlength="12" placeholder="Enter <codemate> Chat Name" id="user_nickname">
+        <button type="button" class="index-button" id="btn_start">SUBMIT</button>
       </div>
 
       <!-- description -->
       <div class="index-section index-text">
-        Start chatting on Codemate via the SendBird service by choosing your display name.
-        Please use your Codemate userID so that you and your match can find each other.
-        This can be changed anytime and will be shown on 1-on-1 and group messaging.
+        Start chatting on &ltcodemate&gt via the SendBird service by choosing your display name.
+        <br>
+        Please use your &ltcodemate&gt User ID so that you and your match can find each other. User IDs can be changed anytime and will be shown on 1-on-1 and group messaging.
       </div>
 
       <div class="index-section index-bottom">
@@ -51,6 +59,11 @@
 
     </div>
   </div>
+  <div class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <p class="footerText"> &copy; 2017 Codemate LLC. Creatively crafted at Rutgers Coding Bootcamp</p>
+  </div>
+</div>
 
   <!--<script src="/static/js/jquery-1.11.3.min.js"></script>-->
   <!--<script src="/static/js/util.js"></script>-->

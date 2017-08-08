@@ -48,6 +48,10 @@ p {
   padding-top: 50px;
 }
 
+.rightBox {
+  padding-right: 100px;
+}
+
 .button-collapse {
   color: #26a69a;
 }
